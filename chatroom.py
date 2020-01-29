@@ -20,7 +20,7 @@ def input_chat():
 		read = read_write(False, "")
 		print(read)
 		return 1
-	else if inp == '-e':
+	elif inp == '-e':
 		return 0
 	else:
 		cmd_command("git pull origin chatroom")
