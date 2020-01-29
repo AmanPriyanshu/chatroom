@@ -13,6 +13,7 @@ def cmd_command(command):
 print("OUT ",cmd_command("git init"))
 
 def input_chat():
+	cmd_command("clear")
 	inp = input("Enter msg or -e EXIT:")
 	desc = cmd_command("git config --list")
 	desc = desc[desc.find("user.name=")+len("user.name="):]
