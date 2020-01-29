@@ -15,6 +15,8 @@ print("OUT ",cmd_command("git init"))
 def input_chat():
 	cmd_command("clear")
 	inp = input("Enter msg or -e EXIT:")
+	if inp == '-e':
+		return 0
 	desc = cmd_command("git config --list")
 	desc = desc[desc.find("user.name=")+len("user.name="):]
 	desc = desc[:desc.find("\n")]
