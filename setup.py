@@ -1,3 +1,4 @@
+import subprocess
 def cmd_command(command):
 	arr = command.split()
 	result = subprocess.run(
@@ -18,6 +19,14 @@ def main():
 	f= open("chats.txt","w+")
 	f.close()
 	cmd_command("git status")
-	cmd_command('git commit -m "Initial commit"')
+	cmd_command('git commit -m "Ready"')
+	cmd_command("git branch chatroom")
+	cmd_command("git checkout chatroom")
+	cmd_command("git add .gitignore")
+	#cmd_command()
+	cmd_command("git add -A")
+	cmd_command("git config credential.helper store")
+	cmd_command("git push -u origin chatroom")
+
 
 main()
