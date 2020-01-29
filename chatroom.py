@@ -14,6 +14,10 @@ print("OUT ",cmd_command("git init"))
 
 def input_chat():
 	inp = input("Enter msg or -e EXIT:")
+	desc = cmd_command("git config --list")
+	desc = desc[desc.find("user.name=")+len("user.name="):]
+	desc = desc[:desc.find("\n")]
+	inp = desc+ ":" + inp
 	if len(inp) == 0:
 		cmd_command("git pull origin chatroom")
 		cmd_command("clear")
@@ -31,7 +35,8 @@ def input_chat():
 		cmd_command("git pull origin chatroom")
 		cmd_command("clear")
 		read = read_write(False, "")
-		print(read)
+		for i in read:
+			print(i)
 
 def read_write(bool, txt):
 	file = open("chats.txt","r")
@@ -50,5 +55,6 @@ def main():
 	a = 1
 	while a != 0:
 		a = input_chat()
+		cmd_command("clear")
 
 main()
