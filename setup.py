@@ -22,7 +22,11 @@ def main():
 	cmd_command('git commit -m "Ready"')
 	cmd_command("git branch chatroom")
 	cmd_command("git checkout chatroom")
+	cmd_command("git add .gitignore")
+	#cmd_command()
 	cmd_command("git add -A")
+	cmd_command("git config credential.helper store")
 	cmd_command("git push -u origin chatroom")
+
 
 main()
