@@ -61,3 +61,4 @@ def main():
 		cmd_command("clear")
 
 main()
+# An attempt to create a simple chatroom using git. Hope you understood.
