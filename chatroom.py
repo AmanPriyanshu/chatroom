@@ -12,7 +12,7 @@ def cmd_command(command):
 
 print("OUT ",cmd_command("git init"))
 
-def input_chat():
+def input_chat(room_name):
 	cmd_command("clear")
 	inp = input("Enter msg or -e EXIT:")
 	if inp == '-e':
@@ -34,8 +34,8 @@ def input_chat():
 		read = read_write(True, inp)
 		cmd_command("git add -A")
 		cmd_command('git commit -m "Update"')
-		cmd_command("git push origin chatroom")
-		cmd_command("git pull origin chatroom")
+		cmd_command("git push origin "+room_name)
+		cmd_command("git pull origin "+room_name)
 		cmd_command("clear")
 		read = read_write(False, "")
 		for i in read:
@@ -56,8 +56,9 @@ def read_write(bool, txt):
 
 def main():
 	a = 1
+	room_name = input('room_name:\t')
 	while a != 0:
-		a = input_chat()
+		a = input_chat(room_name)
 		cmd_command("clear")
 
 main()
