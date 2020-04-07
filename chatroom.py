@@ -42,14 +42,8 @@ def input_chat(room_name):
 			print(i)
 
 def read_write(bool, txt):
-	file = open("chats.txt","r")
-	read = file.readlines() 
-	file.close()
-	read_data = ""
-	for i in read:
-		read_data += i
 	if bool:
-		file_w = open("chats.txt","w")
+		file_w = open("chats.txt","a")
 		file_w.write(read_data + txt + "\n")
 		file_w.close()
 	return read
