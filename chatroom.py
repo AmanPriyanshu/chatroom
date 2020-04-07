@@ -44,7 +44,7 @@ def input_chat(room_name):
 def read_write(bool, txt):
 	if bool:
 		file_w = open("chats.txt","a")
-		file_w.write(read_data + txt + "\n")
+		file_w.write(txt + "\n")
 		file_w.close()
 	return read
 
